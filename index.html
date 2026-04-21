@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>For Kunjapu 💌</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Caveat:wght@400;600&family=Quicksand:wght@400;500;600&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+:root{
+  --rose:#f9a8c9;
+  --soft-rose:#fde8f0;
+  --deep-rose:#d4587a;
+  --lavender:#e0d4f7;
+  --purple:#9b7ecb;
+  --cream:#fef9f5;
+  --text:#5a4a5a;
+  --subtext:#9b8a9b;
+}
+
+html{scroll-behavior:smooth;}
+body{font-family:'Quicksand',sans-serif;background:var(--cream);overflow-x:hidden;color:var(--text);}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:var(--soft-rose);}
+::-webkit-scrollbar-thumb{background:var(--rose);border-radius:10px;}
+
+/* ════ LANDING ════ */
+#landing{
+  position:fixed;inset:0;
+  background:linear-gradient(160deg,#fde8f0 0%,#f0e8fd 40%,#e8f5fd 70%,#fde8f0 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  z-index:1000;text-align:center;padding:24px;
+  transition:opacity .9s ease,transform .9s ease;
+  overflow:hidden;
+}
+
+.l-sparkles{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+.l-sp{position:absolute;font-size:16px;opacity:0;animation:spFloat linear infinite;}
+@keyframes spFloat{
+  0%{transform:translateY(100vh);opacity:0;}
+  8%{opacity:.55;}92%{opacity:.55;}
+  100%{transform:translateY(-60px);opacity:0;}
+}
+
+.l-content{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;align-items:center;
+}
+
+.l-icon{
+  font-size:clamp(72px,16vw,100px);
+  animation:softBob 3s ease-in-out infinite;
+  margin-bottom:20px;
+  display:block;
+  line-height:1;
+}
+@keyframes softBob{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-14px);}
+}
+
+.l-title{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(2.2rem,9vw,5rem);
+  color:var(--deep-rose);
+  margin-bottom:10px;
+  text-shadow:0 2px 12px rgba(212,88,122,.15);
+}
+.l-sub{
+  font-family:'Caveat',cursive;
+  font-size:clamp(1.05rem,3.5vw,1.4rem);
+  color:var(--purple);
+  margin-bottom:36px;
+  opacity:.9;
+}
+.l-btn{
+  background:linear-gradient(135deg,var(--deep-rose),var(--purple));
+  color:white;border:none;
+  padding:16px 44px;
+  border-radius:50px;
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(1.2rem,4vw,1.6rem);
+  cursor:pointer;
+  box-shadow:0 8px 28px rgba(212,88,122,.3);
+  transition:transform .25s ease,box-shadow .25s ease;
+  -webkit-tap-highlight-color:transparent;
+  user-select:none;
+  position:relative;
+  z-index:10;
+}
+.l-btn:hover{transform:translateY(-3px);box-shadow:0 12px 34px rgba(212,88,122,.4);}
+.l-btn:active{transform:scale(.97);}
+
+/* ════ APP ════ */
+#app{display:none;min-height:100vh;}
+#app::before{
+  content:'';position:fixed;inset:0;
+  background-image:radial-gradient(circle,rgba(249,168,201,.07) 1px,transparent 1px);
+  background-size:28px 28px;pointer-events:none;z-index:0;
+}
+
+/* ════ HEADER ════ */
+.hdr{
+  position:sticky;top:0;z-index:200;
+  background:rgba(254,249,245,.93);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  padding:13px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  border-bottom:1px solid rgba(249,168,201,.25);
+  box-shadow:0 1px 16px rgba(249,168,201,.1);
+}
+.hdr-logo{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(1.2rem,4vw,1.7rem);
+  color:var(--deep-rose);
+  white-space:nowrap;
+}
+.day-chip{
+  background:linear-gradient(135deg,rgba(249,168,201,.2),rgba(224,212,247,.3));
+  border:1px solid rgba(249,168,201,.3);
+  padding:6px 14px;border-radius:50px;
+  font-size:clamp(.65rem,1.8vw,.82rem);
+  color:var(--deep-rose);font-weight:600;white-space:nowrap;
+}
+
+/* ════ COMMON ════ */
+.wrap{max-width:980px;margin:0 auto;padding:0 16px;position:relative;z-index:1;}
+.sec-label{
+  font-family:'Caveat',cursive;font-size:.8rem;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--subtext);margin-bottom:6px;text-align:center;
+}
+.sec-title{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(1.7rem,5vw,2.6rem);
+  color:var(--deep-rose);margin-bottom:22px;text-align:center;
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+/* ════ HERO ════ */
+.hero{text-align:center;padding:52px 16px 26px;position:relative;z-index:1;}
+.hero-title{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(2rem,8vw,4rem);
+  color:var(--deep-rose);margin-bottom:10px;
+  animation:fadeUp .7s ease both;
+}
+.hero-sub{
+  font-family:'Caveat',cursive;
+  font-size:clamp(1.05rem,3.5vw,1.45rem);
+  color:var(--purple);margin-bottom:22px;
+  animation:fadeUp .7s ease .15s both;
+}
+.hero-dots{
+  display:flex;justify-content:center;gap:12px;
+  margin-bottom:18px;animation:fadeUp .7s ease .25s both;
+}
+.hero-dots span{font-size:1.5rem;animation:dotBob 2.5s ease-in-out infinite;}
+.hero-dots span:nth-child(2){animation-delay:.25s;}
+.hero-dots span:nth-child(3){animation-delay:.5s;}
+.hero-dots span:nth-child(4){animation-delay:.75s;}
+@keyframes dotBob{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+.typewr{
+  font-family:'Caveat',cursive;
+  font-size:clamp(.95rem,2.8vw,1.25rem);
+  color:var(--deep-rose);min-height:30px;
+  animation:fadeUp .7s ease .35s both;
+  padding:0 10px;
+}
+.typewr::after{content:'|';animation:blink .9s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+
+/* ════ TIMELINE ════ */
+.timeline-sec{position:relative;z-index:1;padding:44px 16px;}
+.tl-card{
+  background:white;border-radius:20px;padding:26px 22px;
+  box-shadow:0 4px 20px rgba(212,88,122,.07);
+  border:1px solid rgba(249,168,201,.2);
+  max-width:460px;margin:0 auto 16px;text-align:center;
+}
+.tl-big{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(2.8rem,9vw,4.5rem);
+  color:var(--deep-rose);display:block;line-height:1.1;
+}
+.tl-sub{
+  font-family:'Caveat',cursive;
+  font-size:clamp(1rem,3vw,1.22rem);
+  color:var(--purple);margin-top:6px;
+}
+.tl-milestones{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:16px;}
+.tl-pill{
+  background:linear-gradient(135deg,rgba(249,168,201,.12),rgba(224,212,247,.18));
+  border:1px solid rgba(249,168,201,.28);border-radius:50px;
+  padding:6px 16px;font-family:'Caveat',cursive;
+  font-size:clamp(.85rem,2.3vw,1rem);color:var(--deep-rose);
+}
+
+/* ════ EMO BANNER ════ */
+.emo-sec{position:relative;z-index:1;padding:0 16px 38px;}
+.emo-card{
+  background:white;border-radius:22px;padding:28px 24px;
+  box-shadow:0 4px 22px rgba(212,88,122,.07);
+  border:1px solid rgba(249,168,201,.2);
+  text-align:center;max-width:660px;margin:0 auto;
+}
+.emo-icon{font-size:clamp(2.2rem,7vw,3rem);margin-bottom:13px;display:block;}
+.emo-card p{
+  font-family:'Caveat',cursive;
+  font-size:clamp(1rem,3vw,1.2rem);
+  color:var(--text);line-height:1.9;
+}
+.emo-hl{color:var(--deep-rose);font-weight:600;}
+
+/* ════ YES/NO ════ */
+.yn-sec{position:relative;z-index:1;padding:0 16px 44px;}
+.yn-card{
+  background:white;border-radius:22px;padding:32px 24px;
+  box-shadow:0 4px 22px rgba(212,88,122,.07);
+  border:1px solid rgba(249,168,201,.2);
+  text-align:center;max-width:540px;margin:0 auto;
+}
+#ynStart .yn-start-icon{font-size:2.5rem;margin-bottom:14px;display:block;}
+.yn-start-q{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(1.4rem,4.5vw,1.85rem);
+  color:var(--deep-rose);margin-bottom:8px;
+}
+.yn-start-hint{
+  font-family:'Caveat',cursive;
+  font-size:clamp(.9rem,2.5vw,1.1rem);
+  color:var(--subtext);margin-bottom:24px;
+}
+.yn-start-btn{
+  background:linear-gradient(135deg,var(--deep-rose),var(--purple));
+  color:white;border:none;padding:13px 36px;border-radius:50px;
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(1.1rem,3.5vw,1.4rem);
+  cursor:pointer;box-shadow:0 5px 18px rgba(212,88,122,.22);
+  transition:transform .2s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.yn-start-btn:hover{transform:translateY(-2px);}
+
+.yn-questions{display:none;}
+.yn-questions.active{display:block;}
+.yn-progress{display:flex;justify-content:center;gap:7px;margin-bottom:18px;}
+.yn-dot{
+  width:9px;height:9px;border-radius:50%;background:var(--lavender);
+  transition:background .3s ease,transform .3s ease;
+}
+.yn-dot.done{background:var(--deep-rose);transform:scale(1.3);}
+
+.yn-q-text{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(1.2rem,4vw,1.6rem);
+  color:var(--text);margin-bottom:22px;
+  min-height:54px;display:flex;align-items:center;justify-content:center;
+  line-height:1.4;
+}
+
+.yn-btns-wrap{
+  position:relative;
+  min-height:60px;
+  display:flex;justify-content:center;align-items:center;gap:16px;
+  flex-wrap:wrap;
+  margin-bottom:4px;
+}
+.yn-yes,.yn-no{
+  padding:12px 32px;border-radius:50px;border:2px solid;
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(1.05rem,3.5vw,1.35rem);
+  cursor:pointer;
+  transition:transform .2s ease,box-shadow .2s ease;
+  -webkit-tap-highlight-color:transparent;
+  white-space:nowrap;
+}
+.yn-yes{
+  background:linear-gradient(135deg,rgba(212,88,122,.1),rgba(212,88,122,.04));
+  border-color:var(--deep-rose);color:var(--deep-rose);
+}
+.yn-no{
+  background:linear-gradient(135deg,rgba(155,126,203,.1),rgba(155,126,203,.04));
+  border-color:var(--purple);color:var(--purple);
+}
+.yn-yes:hover{transform:scale(1.06);box-shadow:0 5px 18px rgba(212,88,122,.18);}
+.yn-no:hover{transform:scale(1.06);box-shadow:0 5px 18px rgba(155,126,203,.18);}
+
+.yn-response{
+  margin-top:16px;font-family:'Caveat',cursive;
+  font-size:clamp(1rem,3vw,1.18rem);
+  color:var(--deep-rose);min-height:26px;
+  opacity:0;transform:translateY(6px);
+  transition:opacity .35s ease,transform .35s ease;
+  padding:0 8px;
+}
+.yn-response.show{opacity:1;transform:translateY(0);}
+
+.yn-finish{display:none;text-align:center;}
+.yn-finish.active{display:block;animation:fadeUp .5s ease;}
+.yn-finish-icon{font-size:2.8rem;margin-bottom:10px;}
+.yn-finish-msg{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(1.3rem,4vw,1.75rem);
+  color:var(--deep-rose);margin-bottom:8px;
+}
+.yn-finish-sub{
+  font-family:'Caveat',cursive;
+  font-size:clamp(.95rem,2.8vw,1.12rem);
+  color:var(--purple);margin-bottom:16px;
+}
+.yn-restart{
+  background:none;border:2px solid var(--rose);
+  color:var(--deep-rose);padding:9px 24px;border-radius:50px;
+  font-family:'Caveat',cursive;font-size:1rem;cursor:pointer;
+  transition:background .2s ease;-webkit-tap-highlight-color:transparent;
+}
+.yn-restart:hover{background:var(--soft-rose);}
+
+/* ════ JAR ════ */
+.jar-sec{position:relative;z-index:1;padding:0 16px 44px;}
+.jar-card{
+  background:white;border-radius:22px;padding:28px 22px;text-align:center;
+  box-shadow:0 4px 20px rgba(212,88,122,.07);
+  border:1px solid rgba(249,168,201,.2);
+  max-width:460px;margin:0 auto;
+}
+.jar-card-title{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(1.4rem,4vw,1.8rem);
+  color:var(--deep-rose);margin-bottom:6px;
+}
+.jar-card-hint{
+  font-family:'Caveat',cursive;
+  font-size:clamp(.88rem,2.5vw,1.05rem);
+  color:var(--subtext);margin-bottom:14px;
+}
+.jar-btn{
+  background:none;border:none;
+  font-size:clamp(52px,13vw,68px);
+  cursor:pointer;display:block;margin:0 auto 10px;
+  filter:drop-shadow(0 3px 10px rgba(245,200,66,.28));
+  transition:transform .25s ease;
+  -webkit-tap-highlight-color:transparent;
+  line-height:1;
+}
+.jar-btn:hover{transform:scale(1.12) rotate(8deg);}
+.jar-btn:active{transform:scale(.95);}
+.jar-msg{
+  font-family:'Caveat',cursive;
+  font-size:clamp(1rem,3vw,1.18rem);
+  color:var(--purple);min-height:26px;
+  opacity:0;transform:translateY(8px);
+  transition:opacity .35s ease,transform .35s ease;
+  padding:0 8px;
+}
+.jar-msg.show{opacity:1;transform:translateY(0);}
+
+/* ════ LETTERS ════ */
+.letters-sec{position:relative;z-index:1;padding:0 16px 44px;}
+.letters-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:14px;max-width:980px;margin:0 auto;
+}
+
+.env-card{cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.env-inner{
+  position:relative;background:white;
+  border-radius:18px;padding:22px 18px 18px;
+  box-shadow:0 3px 14px rgba(0,0,0,.055);
+  border:1px solid rgba(249,168,201,.18);
+  overflow:hidden;
+  transition:transform .3s cubic-bezier(.34,1.4,.64,1),box-shadow .3s ease;
+}
+.env-inner::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:var(--cc,var(--rose));opacity:.8;
+}
+.env-card:hover .env-inner,
+.env-card:active .env-inner{
+  transform:translateY(-7px);
+  box-shadow:0 12px 28px rgba(212,88,122,.13);
+}
+.env-emoji{font-size:clamp(32px,7vw,44px);margin-bottom:10px;display:block;line-height:1;}
+.env-label{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(1rem,3vw,1.25rem);
+  color:var(--text);margin-bottom:5px;line-height:1.3;
+}
+.env-desc{font-size:.78rem;color:var(--subtext);margin-bottom:13px;font-style:italic;line-height:1.5;}
+.env-seal{
+  display:inline-block;
+  background:var(--cc,var(--rose));
+  color:white;padding:6px 15px;border-radius:50px;
+  font-size:.76rem;font-weight:600;
+  transition:transform .2s ease;
+}
+.env-card:hover .env-seal{transform:scale(1.05);}
+.env-deco{position:absolute;bottom:-8px;right:-5px;font-size:46px;opacity:.06;pointer-events:none;}
+
+/* ════ MODAL ════ */
+.modal-ov{
+  position:fixed;inset:0;
+  background:rgba(90,74,90,.42);z-index:5000;
+  display:flex;align-items:center;justify-content:center;
+  padding:14px;opacity:0;
+  animation:fadeIn .25s ease forwards;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+@keyframes fadeIn{to{opacity:1;}}
+.modal-paper{
+  background:#fef9f5;border-radius:22px;
+  max-width:560px;width:100%;max-height:88vh;
+  overflow-y:auto;position:relative;
+  animation:popUp .4s cubic-bezier(.34,1.4,.64,1) forwards;
+  box-shadow:0 24px 60px rgba(90,74,90,.17);
+  -webkit-overflow-scrolling:touch;
+}
+@keyframes popUp{
+  from{transform:scale(.5);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+.modal-hdr{
+  padding:22px 22px 15px;
+  border-bottom:1px dashed rgba(249,168,201,.3);
+  display:flex;align-items:center;gap:12px;
+  background:linear-gradient(135deg,rgba(249,168,201,.07),rgba(224,212,247,.07));
+  border-radius:22px 22px 0 0;
+}
+.m-emoji{font-size:32px;line-height:1;flex-shrink:0;}
+.m-title{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(1.2rem,4vw,1.7rem);
+  color:var(--deep-rose);line-height:1.3;
+  padding-right:30px;
+}
+.m-close{
+  position:absolute;top:13px;right:13px;
+  background:var(--soft-rose);border:none;
+  width:32px;height:32px;border-radius:50%;
+  cursor:pointer;font-size:.9rem;color:var(--deep-rose);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .2s ease,background .2s ease;
+  -webkit-tap-highlight-color:transparent;
+  flex-shrink:0;
+}
+.m-close:hover{transform:rotate(90deg);background:var(--rose);color:white;}
+.modal-body{padding:22px;}
+.modal-body p{
+  font-family:'Caveat',cursive;
+  font-size:clamp(.97rem,2.8vw,1.18rem);
+  color:var(--text);line-height:1.95;margin-bottom:12px;
+}
+.hl{color:var(--deep-rose);font-weight:600;}
+.m-sig{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(1.1rem,3.5vw,1.4rem);
+  color:var(--deep-rose);text-align:right;
+  margin-top:16px;padding-top:16px;
+  border-top:1px dashed rgba(249,168,201,.3);
+}
+.big-emoji{
+  text-align:center;font-size:clamp(1.6rem,5vw,2.4rem);
+  margin:12px 0;letter-spacing:4px;
+}
+.spot-box{
+  background:linear-gradient(135deg,#1db954,#17a849);
+  border-radius:14px;padding:13px 16px;
+  color:white;margin:12px 0;
+  display:flex;align-items:center;gap:12px;
+}
+.spot-box .si{font-size:1.7rem;flex-shrink:0;}
+
+/* ════ COUNTERS ════ */
+.cnt-sec{position:relative;z-index:1;padding:0 16px 44px;text-align:center;}
+.cnt-grid{
+  display:flex;flex-wrap:wrap;
+  justify-content:center;gap:12px;
+  max-width:680px;margin:0 auto;
+}
+.cnt-box{
+  background:white;border-radius:18px;padding:18px 20px;
+  box-shadow:0 3px 14px rgba(212,88,122,.07);
+  border:1px solid rgba(249,168,201,.18);
+  min-width:120px;transition:transform .25s ease;
+}
+.cnt-box:hover{transform:translateY(-4px);}
+.cnt-e{font-size:1.3rem;display:block;margin-bottom:4px;}
+.cnt-n{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(1.6rem,5vw,2.2rem);
+  color:var(--deep-rose);display:block;
+}
+.cnt-l{font-size:.72rem;color:var(--subtext);margin-top:3px;}
+
+/* ════ SECRET ════ */
+.secret-sec{position:relative;z-index:1;padding:0 16px 44px;text-align:center;}
+.secret-card{
+  background:white;border-radius:22px;padding:32px 24px;
+  box-shadow:0 4px 20px rgba(212,88,122,.07);
+  border:1px solid rgba(249,168,201,.2);
+  max-width:540px;margin:0 auto;
+}
+.secret-title{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(1.6rem,5vw,2.2rem);
+  color:var(--purple);margin-bottom:8px;
+}
+.secret-hint{
+  font-family:'Caveat',cursive;
+  font-size:clamp(.9rem,2.5vw,1.1rem);
+  color:var(--subtext);margin-bottom:18px;
+}
+.secret-input{
+  border:2px solid rgba(249,168,201,.4);border-radius:50px;
+  padding:12px 22px;font-family:'Caveat',cursive;
+  font-size:clamp(1rem,3vw,1.2rem);text-align:center;
+  outline:none;background:var(--soft-rose);color:var(--deep-rose);
+  width:100%;max-width:260px;
+  transition:border-color .25s ease,box-shadow .25s ease;
+}
+.secret-input:focus{border-color:var(--deep-rose);box-shadow:0 0 14px rgba(212,88,122,.17);}
+.secret-reveal{
+  margin-top:20px;opacity:0;
+  transition:opacity .5s ease;display:none;text-align:left;
+}
+.secret-reveal.show{opacity:1;display:block;animation:fadeUp .5s ease;}
+.secret-reveal p{
+  font-family:'Caveat',cursive;
+  font-size:clamp(1rem,3vw,1.18rem);
+  color:var(--text);line-height:1.95;margin-bottom:12px;
+}
+.sr-sig{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(1.2rem,4vw,1.5rem);
+  color:var(--deep-rose);text-align:right;
+  margin-top:16px;padding-top:16px;
+  border-top:1px dashed rgba(249,168,201,.3);
+}
+
+/* ════ FOOTER ════ */
+.footer{
+  position:relative;z-index:1;text-align:center;padding:28px 20px 36px;
+  background:linear-gradient(135deg,rgba(249,168,201,.08),rgba(224,212,247,.1));
+  border-top:1px solid rgba(249,168,201,.15);
+}
+.footer-title{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(1.2rem,4vw,1.6rem);
+  color:var(--deep-rose);margin-bottom:6px;
+}
+.footer-sub{font-family:'Caveat',cursive;font-size:clamp(.85rem,2.5vw,1rem);color:var(--purple);}
+
+/* ════ CONFETTI ════ */
+.conf-p{
+  position:fixed;border-radius:50%;pointer-events:none;z-index:9999;
+  animation:cFall 1.3s ease forwards;
+}
+@keyframes cFall{
+  0%{transform:translate(var(--x),var(--y)) scale(1);opacity:1;}
+  100%{transform:translate(calc(var(--x) + var(--tx)),calc(var(--y) + var(--ty))) scale(.3);opacity:0;}
+}
+
+/* ════ RIPPLE ════ */
+.rip{
+  position:absolute;border-radius:50%;
+  background:rgba(212,88,122,.16);
+  animation:ripOut .5s ease forwards;
+  pointer-events:none;transform:scale(0);
+}
+@keyframes ripOut{to{transform:scale(4);opacity:0;}}
+
+/* ════ RESPONSIVE ════ */
+@media(max-width:520px){
+  .letters-grid{grid-template-columns:1fr 1fr;}
+  .yn-btns-wrap{gap:10px;}
+}
+@media(max-width:360px){
+  .letters-grid{grid-template-columns:1fr;}
+  .yn-yes,.yn-no{padding:11px 22px;font-size:1.05rem;}
+  .secret-card,.yn-card,.emo-card,.jar-card{padding:22px 16px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ LANDING ══════════ -->
+<div id="landing">
+  <div class="l-sparkles" id="lSp"></div>
+  <div class="l-content">
+    <span class="l-icon">💌</span>
+    <h1 class="l-title">For Kunjapu 🌸</h1>
+    <p class="l-sub">Something made with love is waiting for you ✨</p>
+    <button class="l-btn" id="enterBtn">Open Your Letters 💛</button>
+  </div>
+</div>
+
+<!-- ══════════ APP ══════════ -->
+<div id="app">
+
+  <header class="hdr">
+    <div class="hdr-logo">💌 For Kunjapu</div>
+    <div class="day-chip">💛 1 Month &amp; 24 Days</div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero wrap">
+    <h1 class="hero-title">Hello, my Kunjapu 🌸</h1>
+    <p class="hero-sub">I made every pixel of this — just for you, with all my heart</p>
+    <div class="hero-dots">
+      <span>💛</span><span>🌸</span><span>✨</span><span>💕</span>
+    </div>
+    <div class="typewr" id="typewr"></div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="timeline-sec">
+    <div class="wrap">
+      <p class="sec-label">our story</p>
+      <h2 class="sec-title">1 Month &amp; 24 Days 🌸</h2>
+      <div class="tl-card">
+        <span class="tl-big">54</span>
+        <p class="tl-sub">beautiful days of loving each other 💛</p>
+        <div class="tl-milestones">
+          <span class="tl-pill">🌅 First "hello"</span>
+          <span class="tl-pill">💌 First letter</span>
+          <span class="tl-pill">🌙 Late night calls</span>
+          <span class="tl-pill">💛 Partners forever</span>
+          <span class="tl-pill">🙏 God's blessing</span>
+          <span class="tl-pill">✨ Every day since</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emotional Banner -->
+  <section class="emo-sec">
+    <div class="wrap">
+      <div class="emo-card">
+        <span class="emo-icon">🐻</span>
+        <p>
+          <span class="emo-hl">Kunjapu,</span> I know some days the distance feels like forever.
+          But every single morning I wake up thinking of you. You are not just my girlfriend —
+          you are <span class="emo-hl">my home, my peace, my samadhanam.</span>
+          No matter how many miles are between us, my heart already found its way to you.
+          With God's blessing, nammal plan cheytha ellam reality aakum. 💛
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- YES / NO Game -->
+  <section class="yn-sec">
+    <div class="wrap">
+      <p class="sec-label">just for fun 🎀</p>
+      <h2 class="sec-title">A Little Game 💕</h2>
+      <div class="yn-card">
+
+        <!-- Start -->
+        <div id="ynStart">
+          <span class="yn-start-icon">🎀</span>
+          <p class="yn-start-q">Ready for some cute questions?</p>
+          <p class="yn-start-hint">Answer honestly… or try to 😏</p>
+          <button class="yn-start-btn" id="ynStartBtn">Let's Play 💛</button>
+        </div>
+
+        <!-- Questions -->
+        <div class="yn-questions" id="ynQuestions">
+          <div class="yn-progress" id="ynProgress"></div>
+          <div class="yn-q-text" id="ynQText"></div>
+          <div class="yn-btns-wrap" id="ynBtnsWrap">
+            <button class="yn-yes" id="ynYes">Yes 💛</button>
+            <button class="yn-no"  id="ynNo">No 🙈</button>
+          </div>
+          <div class="yn-response" id="ynResp"></div>
+        </div>
+
+        <!-- Finish -->
+        <div class="yn-finish" id="ynFinish">
+          <div class="yn-finish-icon">🥰</div>
+          <div class="yn-finish-msg">You're literally the cutest 💛</div>
+          <div class="yn-finish-sub">Ente Kunjapu is absolutely perfect 🌸</div>
+          <button class="yn-restart" id="ynRestartBtn">Play Again 🎀</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Jar -->
+  <section class="jar-sec">
+    <div class="wrap">
+      <p class="sec-label">little surprises</p>
+      <h2 class="sec-title">Wish Jar 🫙</h2>
+      <div class="jar-card">
+        <p class="jar-card-title">Tap the jar!</p>
+        <p class="jar-card-hint">A little note from your Ponn, whenever you need it 🌸</p>
+        <button class="jar-btn" id="jarBtn">🫙</button>
+        <div class="jar-msg" id="jarMsg"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Letters -->
+  <section class="letters-sec">
+    <div class="wrap">
+      <p class="sec-label">open when…</p>
+      <h2 class="sec-title">Your 14 Letters 💌</h2>
+      <p style="text-align:center;font-family:'Caveat',cursive;font-size:clamp(.92rem,2.5vw,1.08rem);color:var(--subtext);margin-bottom:20px;">Tap any envelope whenever you need it, Kunjappu 🌸</p>
+    </div>
+    <div class="letters-grid" id="grid"></div>
+  </section>
+
+  <!-- Counters -->
+  <section class="cnt-sec">
+    <p class="sec-label">us, in numbers</p>
+    <h2 class="sec-title">Our Little Stats 💕</h2>
+    <div class="cnt-grid" id="cntGrid"></div>
+  </section>
+
+  <!-- Secret -->
+  <section class="secret-sec">
+    <div class="secret-card">
+      <h2 class="secret-title">🔐 Secret Letter</h2>
+      <p class="secret-hint">Type our secret word to unlock something very special…</p>
+      <input class="secret-input" id="secIn" type="text"
+             placeholder="secret word…"
+             autocomplete="off" autocorrect="off" spellcheck="false">
+      <div class="secret-reveal" id="secReveal">
+        <div style="text-align:center;font-size:2rem;margin-bottom:16px;">🌙✨💛✨🌙</div>
+        <p style="font-family:'Dancing Script',cursive;font-size:1.45rem;color:var(--deep-rose);text-align:center;margin-bottom:16px;">
+          You found it, ente Kunjapu 🥺
+        </p>
+        <p>Kunjappu, I don't know how to put into words what you mean to me. You walked into my life quietly — and rearranged everything, in the most beautiful way. You are the reason rainy days feel cozy. The reason songs hit differently. The reason I believe in something as extraordinary as <span class="hl">us</span>.</p>
+        <p>Distance is the hardest part. There are nights I reach for my phone just to see your name. There are moments so beautiful I think <em style="color:var(--purple)">"I have to tell her"</em> — and then I remember you're not beside me, and it aches.</p>
+        <p>But here is what I hold onto: every single mile between us is a mile I would walk barefoot, in the dark, without hesitation — just to get to you. This is not a forever-apart story. This is a <span class="hl">love story</span> — with God's blessing, the kind people write about. And the ending? It's you and me, finally together. No more countdowns. No more goodbyes through a screen. Just <span class="hl">us</span>. 🌸</p>
+        <p>Until then — I love you. More than any letter will ever say. More than you'll ever fully know. Njan eppozhum ninte koode und. <span class="hl">Always yours, your Ponn. 💛🦁</span></p>
+        <div class="sr-sig">— Forever &amp; always 🌙🦁</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer-title">Made with every bit of love I have, for Kunjapu 💛</p>
+    <p class="footer-sub">Every word, every pixel — all yours, always 🌸</p>
+  </footer>
+
+</div>
+
+<script>
+// ─── DATA ─────────────────────────────────────────────────────────
+var LETTERS = [
+  {
+    emoji:'🫂', label:'Open When You Need a Hug',
+    desc:'Whenever you just need to feel me close…', cc:'#f9a8c9',
+    body:'<div class="big-emoji">🫂 🤍 🌸</div><p>Dear Kunjappu, just close your eyes and take a deep breath.</p><p><span class="hl">Njan ippo ninte koode undennu karutho.</span> I am holding you so tight that you can feel my heartbeat.</p><p>Everything is okay, Kunja. Distance ethra undekilum, <span class="hl">I am right here with you.</span></p><p>Ente kunj onnu chiriche? Come on, that beautiful smile… 🌸</p><p>I love you. More than you know. More than words can carry. 🤍</p>'
+  },
+  {
+    emoji:'🤝', label:'Open When We Have a Misunderstanding',
+    desc:'Because we are always a team…', cc:'#c084fc',
+    body:'<div class="big-emoji">🤝 💝 🌸</div><p>Dear Kunjappu, remember our promise?</p><p>Situation ethra valuth aanekilum <span class="hl">nammal thammil shout cheyilla.</span> We are a team — it\'s always <span class="hl">Us vs. The Problem</span>, never us vs. each other.</p><p>Njan ninnodu kshamikkan tayyar aanu, neeyum ennod kshamippikkanam. Namude samadhanam and namude bond — <span class="hl">athaanu ellathinekkal valuth.</span></p><p>Let\'s solve this together. Always together. 💝</p>'
+  },
+  {
+    emoji:'🧿', label:'Open When You Miss Me Too Much',
+    desc:'For when the distance feels the heaviest…', cc:'#60a5fa',
+    body:'<div class="big-emoji">🧿 ✨ 🌙</div><p>Dear Kunjappu, <span class="hl">njanum ninne valare kooduthal miss cheyyunnu.</span></p><p>But remember — with God\'s blessing, <span class="hl">one day this distance will end.</span> Nammal plan cheytha ellam reality aakum. Just wait for that perfect timing.</p><p>He is watching over us. And I am always in your prayers and your heart — just as you are always in mine. ✨</p><p>That day is coming, Kunja. Hold on. 🧿</p>'
+  },
+  {
+    emoji:'🛡️', label:"Open When You Feel Low or 'Not Enough'",
+    desc:'Because you are more than enough, always…', cc:'#f59e0b',
+    body:'<div class="big-emoji">🛡️ 💕 🌸</div><p>Dear Kunjappu, <span class="hl">don\'t ever think like that.</span></p><p>Neeyanu ente lokam. You are perfect just the way you are, and <span class="hl">I am so proud to have you.</span></p><p>Life-il enthu vannalum, njan eppozhum ninte support aayi, ninte karuthayi, ninte kavallayi koode undakum.</p><p>You are my greatest blessing — <span class="hl">the most beautiful gift God has given me.</span> 💕</p>'
+  },
+  {
+    emoji:'🌙', label:"Open When You Can't Sleep",
+    desc:'Sleep peacefully, I am in your dreams…', cc:'#7c3aed',
+    body:'<div class="big-emoji">🌙 💤 ⭐</div><p>Dear Kunjappu, sleep peacefully.</p><p><span class="hl">Njan ninte swapnangalil koode undakum.</span> Tomorrow is a new day with new blessings.</p><p>Onnum orthu vishamikkaruth. Njan ninte koode thanne und.</p><p>Just close your eyes, breathe slowly, and feel me right there beside you. 🤍</p><p><span class="hl">Goodnight, my world.</span> 💤</p>'
+  },
+  {
+    emoji:'✨', label:'Open When You Want to Know Our Future',
+    desc:'Our dreams are already on their way…', cc:'#f43f5e',
+    body:'<div class="big-emoji">✨ 🧿 🌟</div><p>Dear Kunjappu, with God\'s blessing, <span class="hl">one day we will accomplish everything we dreamed of.</span></p><p>Nammal plan cheytha karyangalum, swapnangalum ellam reality aakum. God will give us those beautiful moments when the time is right.</p><p><span class="hl">I am holding your hand until we reach there.</span> Every step, every dream, together. 🌟</p><p>Amen. 🧿</p>'
+  },
+  {
+    emoji:'🤒', label:'Open When You Are Sick',
+    desc:'Get well soon, ente Kunj…', cc:'#10b981',
+    body:'<div class="big-emoji">🤒 🤍 🌿</div><p>Dear Kunjappu, enikk ariyam ippo nalloru vishamam aanennu.</p><p>Sick aayi irikkumbol koode njan illathe irikkunnathil <span class="hl">enikkum nalla sankadam und.</span></p><p>Please take your medicines on time and rest well. Feel me sitting right next to you — holding your hand, making sure you\'re okay. 🌿</p><p><span class="hl">Ente Kunj vegathil ok aakum.</span> Get well for your Ponn. 🤍</p>'
+  },
+  {
+    emoji:'🌧️', label:'Open When You Had a Really Bad Day',
+    desc:'I wish I was there to make it better…', cc:'#0ea5e9',
+    body:'<div class="big-emoji">🌧️ 🤍 🌈</div><p>Dear Kunjappu, njan ariyunnu — today was rough. Something happened today that hurt you.</p><p>I wish I was there to just <span class="hl">sit next to you and make you forget everything.</span></p><p>You are much stronger than you think, Kunja. Relax, take some rest, and remember — <span class="hl">your Ponn is always here to listen.</span></p><p>Namukk onnich ninn ith face cheyyam. Always together. 🤍</p>'
+  },
+  {
+    emoji:'🌎', label:'Open When You Feel Lonely in This Distance',
+    desc:'You are never truly alone, ever…', cc:'#8b5cf6',
+    body:'<div class="big-emoji">🌎 🧿 💛</div><p>Dear Kunjappu, distance kooduthal aanennu thonni <span class="hl">vishamikkaruth.</span></p><p>Njan ninte aduth koode illayirikkum, pakshe <span class="hl">ente prarthanayilum chinthayilum eppozhum neeyundu.</span></p><p>Think about the day we won\'t have to say goodbye anymore. <span class="hl">That day is coming.</span></p><p>Njan ennum ninte koode und. Always. 🧿✨</p>'
+  },
+  {
+    emoji:'🎉', label:'Open When You Are Extra Happy!',
+    desc:'Tell me everything! I want to celebrate you!', cc:'#f43f5e',
+    body:'<div class="big-emoji">🎉 💕 🥳</div><p>Dear Kunjappu, <span class="hl">I love seeing you this happy!</span></p><p>Ninte aa chiriyanu ente lokam. Tell me everything that happened — <span class="hl">njan ninte number one fan aanu.</span></p><p>Ee smile kaanan vendiyanu njan jeevikkunnath thanne. 💕</p><p>Let\'s celebrate this happiness together! You deserve every bit of joy. 🎉</p>'
+  },
+  {
+    emoji:'🏆', label:'Open When You Achieved Something Big',
+    desc:'I always knew you could do it…', cc:'#f5c842',
+    body:'<div class="big-emoji">🏆 🌟 💛</div><p>Dear Kunjappu, <span class="hl">I knew you could do it!</span></p><p>Ente kunj-inte hard work-inu ulla result aanu ithu. Whether it\'s a small win or a huge achievement — <span class="hl">njan eppozhum ninte koode ninnu clap cheyyan undakum.</span></p><p>You are destined for greatness, Kunja. And I get to watch you shine — that\'s my favourite thing. 🌟</p><p><span class="hl">I believe in you. Always. 😇</span></p>'
+  },
+  {
+    emoji:'⚓', label:'Open When You Feel Like Giving Up',
+    desc:'Hold my hand — let\'s move forward together…', cc:'#6ee7b7',
+    body:'<div class="big-emoji">⚓ 🤍 🫂</div><p>Dear Kunjappu, breathe.</p><p>Give up cheyyan thonnumbol <span class="hl">think about why we started and the dreams we planned together.</span></p><p>Hard times are just temporary — pakshe <span class="hl">nammude bond permanent aanu.</span></p><p>I am your shield. Hold my hand virtually and <span class="hl">let\'s move forward.</span> One step at a time. Together. 🤍🫂</p>'
+  },
+  {
+    emoji:'💭', label:"Open When You Want to Know What I'm Doing",
+    desc:'Right now, in this very moment…', cc:'#f9a8c9',
+    body:'<div class="big-emoji">💭 🦁 ✨</div><p>Dear Kunjappu, njan ippo enthu cheyyukayanekilum — <span class="hl">ente chinthayil neeyund.</span></p><p>Thinking about your smile. Or replaying our last call. Or just waiting for your message. 💛</p><p><span class="hl">Every second of my day is better because you are in it.</span></p><p>I love you more than ever, Kunja. More every single day. 🦁✨</p>'
+  },
+  {
+    emoji:'💍', label:'Open When You Want to Know How Much I Love You',
+    desc:'10/10 — always and forever…', cc:'#d4587a',
+    body:'<div class="big-emoji">🦁 💍 🤍</div><p>Dear Kunjappu, <span class="hl">words il parayan pattillathra love njan ninakku tharunnu.</span></p><p>You are my peace. My samadhanam. My laughter. My home. My answered prayer.</p><p><span class="hl">Simply — you are my life.</span></p><p>Njan ninne sthegikkunnathinekkal kooduthal ninne sthegikkunnu, every single day. And I always will. 💍</p><p><span class="hl">Forever and always — your Ponn.</span> 🦁🤍</p>'
+  }
+];
+
+var JAR = [
+  "Ninte chiriyanu ente lokam 💛",
+  "Njan eppozhum ninte koode und, distance ethra undekilum 🌸",
+  "With God's blessing, nammal plan cheytha ellam reality aakum ✨",
+  "You are my peace, my samadhanam, my everything 🤍",
+  "Ente Kunjapu — you are the most beautiful gift 💕",
+  "Every day apart is one day closer to forever together 🌙",
+  "Njan ninnodu love aanu, athil maruvilla ever 💛",
+  "You make everything feel softer and better 🌸",
+  "Thinking of you… right now… always 💭",
+  "Ninte swapnangalil koode njan undakum 🌙",
+  "Home isn't a place — home is you, Kunjapu 🏡",
+  "I chose you. I choose you. Eppozhum. 🌸",
+  "Ente Kunj-inte happiness aanu ente happiness 💛",
+  "God brought us together — and He is watching over us 🧿",
+  "Your Ponn loves you more than words will ever say 🦁💍"
+];
+
+var TYPEWR = [
+  "Njan eppozhum ninte koode und 💛",
+  "You are my peace, my home, my everything 🌸",
+  "This distance is just a chapter — us is the whole story ✨",
+  "With God's blessing, nammal plan cheytha ellam reality aakum 🧿",
+  "I love you more every single day, Kunjappu 💕",
+  "Forever and always — your Ponn 🦁"
+];
+
+var YN_QUESTIONS = [
+  { q:"Do you miss me right now? 🥺", yes:"Njanum ninne miss cheyyunnu. So much. Always. 💛", no:"Liar! I can feel you missing me through the screen 😏💕", runaway:true },
+  { q:"Am I your favourite person? 😇", yes:"Obviously the only correct answer! Njan ninne sthegikkunnu 🌸", no:"Okay who is it? I need names immediately 😤 (I'm kidding, love you 💛)", runaway:false },
+  { q:"Would you hug me if I was there right now? 🫂", yes:"Running to you RIGHT NOW 🏃💨 Kaathekkum njan 💛", no:"No hug?! This is a betrayal! 😭 (I know you would 🥺)", runaway:true },
+  { q:"Do you think about me before you sleep? 🌙", yes:"Njanum ninne orthu thanne undakum every night 🌙💛", no:"I don't believe this for even one second 😌💕", runaway:false },
+  { q:"Is your Ponn the best? 🦁", yes:"Correct answer! Njan ninne sthegikkunnu so much 🦁💛", no:"EXCUSE ME?! 😤 Try again… 🦁 (I love you 🌸)", runaway:true },
+  { q:"Will you love me always? 💍", yes:"And I will love you always too, Kunjappu. Forever. 💍🤍", no:"That's not allowed! Ente Kunjapu must love me always 😤💛", runaway:true }
+];
+
+// ─── LANDING ──────────────────────────────────────────────────────
+function buildSparkles() {
+  var c = document.getElementById('lSp');
+  var em = ['💛','🌸','✨','💕','🌟','💌','🧿','🤍'];
+  for (var i = 0; i < 12; i++) {
+    var s = document.createElement('div');
+    s.className = 'l-sp';
+    s.textContent = em[i % em.length];
+    s.style.cssText = 'left:' + (Math.random()*100) + '%;animation-delay:' + (Math.random()*10) + 's;animation-duration:' + (Math.random()*8+12) + 's;font-size:' + (Math.random()*10+10) + 'px;';
+    c.appendChild(s);
+  }
+}
+
+function enterSite() {
+  var l = document.getElementById('landing');
+  var a = document.getElementById('app');
+  l.style.opacity = '0';
+  l.style.transform = 'scale(1.04)';
+  setTimeout(function() {
+    l.style.display = 'none';
+    a.style.display = 'block';
+    initApp();
+  }, 850);
+}
+
+// ─── APP INIT ─────────────────────────────────────────────────────
+function initApp() {
+  startTypewriter();
+  renderLetters();
+  renderCounters();
+  setupYN();
+  setupJar();
+  setupSecret();
+}
+
+// ─── TYPEWRITER ───────────────────────────────────────────────────
+var twI = 0, twC = 0, twDel = false;
+function startTypewriter() {
+  var el = document.getElementById('typewr');
+  function tick() {
+    var txt = TYPEWR[twI];
+    if (!twDel) { twC++; el.textContent = txt.slice(0, twC); }
+    else { twC--; el.textContent = txt.slice(0, twC); }
+    if (!twDel && twC === txt.length) { twDel = true; setTimeout(tick, 1800); return; }
+    if (twDel && twC === 0) { twDel = false; twI = (twI + 1) % TYPEWR.length; }
+    setTimeout(tick, twDel ? 40 : 70);
+  }
+  tick();
+}
+
+// ─── LETTERS ──────────────────────────────────────────────────────
+function renderLetters() {
+  var g = document.getElementById('grid');
+  LETTERS.forEach(function(l) {
+    var card = document.createElement('div');
+    card.className = 'env-card';
+    card.innerHTML =
+      '<div class="env-inner" style="--cc:' + l.cc + '">' +
+        '<span class="env-emoji">' + l.emoji + '</span>' +
+        '<div class="env-label">' + l.label + '</div>' +
+        '<div class="env-desc">' + l.desc + '</div>' +
+        '<span class="env-seal" style="background:' + l.cc + '">Open ✨</span>' +
+        '<div class="env-deco">' + l.emoji + '</div>' +
+      '</div>';
+    card.addEventListener('click', function(e) {
+      doRipple(e, card.querySelector('.env-inner'));
+      var captured = l;
+      setTimeout(function() { openLetter(captured); }, 200);
+    });
+    g.appendChild(card);
+  });
+}
+
+function openLetter(l) {
+  doConfetti();
+  var ov = document.createElement('div');
+  ov.className = 'modal-ov';
+  ov.innerHTML =
+    '<div class="modal-paper">' +
+      '<div class="modal-hdr">' +
+        '<span class="m-emoji">' + l.emoji + '</span>' +
+        '<div class="m-title">' + l.label + '</div>' +
+      '</div>' +
+      '<button class="m-close" aria-label="Close">✕</button>' +
+      '<div class="modal-body">' + l.body +
+        '<div class="m-sig">— With all my love, your Ponn 🦁💛</div>' +
+      '</div>' +
+    '</div>';
+
+  ov.querySelector('.m-close').addEventListener('click', function() {
+    closeModal(ov);
+  });
+  ov.addEventListener('click', function(e) {
+    if (e.target === ov) closeModal(ov);
+  });
+  document.body.appendChild(ov);
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(ov) {
+  ov.style.opacity = '0';
+  setTimeout(function() {
+    if (ov.parentNode) ov.parentNode.removeChild(ov);
+    document.body.style.overflow = '';
+  }, 250);
+}
+
+// ─── COUNTERS ─────────────────────────────────────────────────────
+function renderCounters() {
+  var items = [
+    { n:54,   l:'Days Together',     e:'💛' },
+    { n:14,   l:'Open When Letters', e:'💌' },
+    { n:'∞',  l:'Ways I Love You',   e:'💕' },
+    { n:1,    l:'Person For Me',     e:'🦁' }
+  ];
+  var g = document.getElementById('cntGrid');
+  items.forEach(function(it) {
+    var b = document.createElement('div');
+    b.className = 'cnt-box';
+    var num = typeof it.n === 'number' ? it.n.toLocaleString() : it.n;
+    b.innerHTML = '<span class="cnt-e">' + it.e + '</span><span class="cnt-n">' + num + '</span><div class="cnt-l">' + it.l + '</div>';
+    g.appendChild(b);
+  });
+}
+
+// ─── YES / NO ─────────────────────────────────────────────────────
+var ynIdx = 0, noCount = 0;
+
+function setupYN() {
+  document.getElementById('ynStartBtn').addEventListener('click', startYN);
+  document.getElementById('ynYes').addEventListener('click', function() { answerYN('yes'); });
+  document.getElementById('ynNo').addEventListener('click', function() { answerYN('no'); });
+  document.getElementById('ynRestartBtn').addEventListener('click', restartYN);
+}
+
+function startYN() {
+  document.getElementById('ynStart').style.display = 'none';
+  document.getElementById('ynQuestions').classList.add('active');
+  ynIdx = 0; noCount = 0;
+  buildProgress();
+  showQuestion();
+}
+
+function buildProgress() {
+  var p = document.getElementById('ynProgress');
+  p.innerHTML = '';
+  YN_QUESTIONS.forEach(function() {
+    var d = document.createElement('div');
+    d.className = 'yn-dot';
+    p.appendChild(d);
+  });
+}
+
+function showQuestion() {
+  var q = YN_QUESTIONS[ynIdx];
+  document.getElementById('ynQText').textContent = q.q;
+  var resp = document.getElementById('ynResp');
+  resp.textContent = '';
+  resp.classList.remove('show');
+
+  var noBtn = document.getElementById('ynNo');
+  noBtn.style.position = '';
+  noBtn.style.left = '';
+  noBtn.style.top = '';
+  noCount = 0;
+
+  var dots = document.querySelectorAll('.yn-dot');
+  for (var i = 0; i < dots.length; i++) {
+    dots[i].classList.toggle('done', i < ynIdx);
+  }
+}
+
+function answerYN(ans) {
+  var q = YN_QUESTIONS[ynIdx];
+  var resp = document.getElementById('ynResp');
+
+  if (ans === 'yes') {
+    resp.textContent = q.yes;
+    resp.classList.add('show');
+    doConfetti();
+    setTimeout(nextQ, 1700);
+  } else {
+    if (q.runaway && noCount < 3) {
+      runAway();
+      noCount++;
+    } else {
+      resp.textContent = q.no;
+      resp.classList.add('show');
+      setTimeout(nextQ, 1900);
+    }
+  }
+}
+
+function runAway() {
+  var btn = document.getElementById('ynNo');
+  var wrap = document.getElementById('ynBtnsWrap');
+  btn.style.position = 'absolute';
+  var wW = wrap.offsetWidth || 300;
+  var bW = btn.offsetWidth || 100;
+  var maxX = Math.max(wW - bW - 20, 60);
+  var rx = Math.floor(Math.random() * maxX) - maxX / 2;
+  var ry = (Math.random() > 0.5 ? 1 : -1) * Math.floor(Math.random() * 30 + 10);
+  var curL = parseFloat(btn.style.left) || 0;
+  var curT = parseFloat(btn.style.top)  || 0;
+  var newL = Math.max(-maxX/2, Math.min(maxX/2, curL + rx));
+  var newT = Math.max(-40, Math.min(40, curT + ry));
+  btn.style.left = newL + 'px';
+  btn.style.top  = newT + 'px';
+}
+
+function nextQ() {
+  var dots = document.querySelectorAll('.yn-dot');
+  if (dots[ynIdx]) dots[ynIdx].classList.add('done');
+  ynIdx++;
+  if (ynIdx >= YN_QUESTIONS.length) {
+    document.getElementById('ynQuestions').classList.remove('active');
+    document.getElementById('ynFinish').classList.add('active');
+    doConfetti();
+    setTimeout(doConfetti, 400);
+  } else {
+    document.getElementById('ynResp').classList.remove('show');
+    setTimeout(showQuestion, 200);
+  }
+}
+
+function restartYN() {
+  document.getElementById('ynFinish').classList.remove('active');
+  document.getElementById('ynQuestions').classList.remove('active');
+  document.getElementById('ynStart').style.display = 'block';
+  ynIdx = 0; noCount = 0;
+}
+
+// ─── JAR ──────────────────────────────────────────────────────────
+var lastJ = -1;
+function setupJar() {
+  document.getElementById('jarBtn').addEventListener('click', openJar);
+}
+function openJar() {
+  var el = document.getElementById('jarMsg');
+  var idx;
+  do { idx = Math.floor(Math.random() * JAR.length); } while (idx === lastJ);
+  lastJ = idx;
+  el.classList.remove('show');
+  setTimeout(function() { el.textContent = JAR[idx]; el.classList.add('show'); }, 170);
+  doConfetti();
+}
+
+// ─── SECRET ───────────────────────────────────────────────────────
+function setupSecret() {
+  document.getElementById('secIn').addEventListener('input', function() {
+    checkSecret(this.value);
+  });
+}
+function checkSecret(v) {
+  var r = document.getElementById('secReveal');
+  if (v.toLowerCase().trim() === 'kunjapu') {
+    r.style.display = 'block';
+    setTimeout(function() { r.classList.add('show'); }, 10);
+    doConfetti();
+    setTimeout(doConfetti, 500);
+  } else {
+    r.classList.remove('show');
+    setTimeout(function() {
+      if (!r.classList.contains('show')) r.style.display = 'none';
+    }, 500);
+  }
+}
+
+// ─── CONFETTI ─────────────────────────────────────────────────────
+var COLORS = ['#f9a8c9','#c084fc','#fbbf24','#6ee7b7','#93c5fd','#f87171','#fde68a'];
+function doConfetti() {
+  var cx = window.innerWidth / 2;
+  var cy = window.innerHeight / 2;
+  for (var i = 0; i < 14; i++) {
+    var p = document.createElement('div');
+    p.className = 'conf-p';
+    var ang = (i / 14) * 360;
+    var dist = Math.random() * 90 + 40;
+    var tx = Math.cos(ang * Math.PI / 180) * dist;
+    var ty = Math.sin(ang * Math.PI / 180) * dist;
+    var w = Math.random() * 6 + 5;
+    p.style.cssText =
+      'background:' + COLORS[i % COLORS.length] + ';' +
+      '--x:' + cx + 'px;--y:' + cy + 'px;' +
+      '--tx:' + tx + 'px;--ty:' + ty + 'px;' +
+      'left:0;top:0;width:' + w + 'px;height:' + w + 'px;';
+    document.body.appendChild(p);
+    setTimeout(function(el) { if (el.parentNode) el.parentNode.removeChild(el); }.bind(null, p), 1400);
+  }
+}
+
+// ─── RIPPLE ───────────────────────────────────────────────────────
+function doRipple(e, target) {
+  var r = target.getBoundingClientRect();
+  var rp = document.createElement('div');
+  rp.className = 'rip';
+  rp.style.cssText = 'left:' + (e.clientX - r.left) + 'px;top:' + (e.clientY - r.top) + 'px;width:50px;height:50px;margin:-25px 0 0 -25px;';
+  target.appendChild(rp);
+  setTimeout(function() { if (rp.parentNode) rp.parentNode.removeChild(rp); }, 500);
+}
+
+// ─── INIT ─────────────────────────────────────────────────────────
+buildSparkles();
+
+// Wire up landing button safely
+document.getElementById('enterBtn').addEventListener('click', function() {
+  enterSite();
+});
+</script>
+</body>
+</html>
